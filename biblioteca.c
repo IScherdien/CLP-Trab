@@ -6,6 +6,7 @@ int menu(){
     printf("Ele vai organizar melhor do que uma mãe organizaria o seu roupeiro\n");
     printf("Informe tamanho do vetor: ");
     scanf("%d", &tamanho);
+    return tamanho;
 }
 
 void imprimir(int *vetor, int tamanho){
@@ -60,7 +61,7 @@ int *selection(int vetor[], int tamanho){
 }
 
 int *quick(int vetor[],int esq, int dir) {
-    int inicio, fim, pivo, temp;
+    int inicio, fim, pivo;
     inicio = esq;
     fim = dir;
     pivo = vetor[(esq + dir) / 2];
@@ -94,9 +95,10 @@ int *merge(int vetor[], int inicio, int fim){
         merge(vetor, pivo + 1, fim);
         separar(vetor, inicio, pivo, fim);
     }
+    return vetor;
 }
 
-int separar(int vetor[], int inicio, int pivo, int fim){
+int *separar(int vetor[], int inicio, int pivo, int fim){
     int i, j, k;
     int piesq, pidir;
     piesq = pivo - inicio + 1;

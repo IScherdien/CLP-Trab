@@ -11,7 +11,7 @@ int *insertion(int vetor[], int tamanho);
 int *selection(int vetor[], int tamanho);
 int *quick(int vetor[],int esq, int dir);
 int *merge(int vetor[], int inicio, int fim);
-int separar(int vetor[], int inicio, int pivo, int fim);
+int *separar(int vetor[], int inicio, int pivo, int fim);
 void troca(int *a, int *b);
 void tempo();
 
