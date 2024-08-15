@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -g
 
-all: build_dir biblioteca
+all: build_dir biblioteca run
 
 biblioteca: biblioteca.c biblioteca.h
 	$(CC) $(CFLAGS) -shared -o build/biblioteca.so -fPIC biblioteca.c

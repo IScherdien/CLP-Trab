@@ -30,18 +30,32 @@ void imprimir(int *vetor, int tamanho){
      return vetor;
 }
 
-int *insertion(int vetor[], int tamanho){
-    int temp, i, j;
-    for (i = 1; i < tamanho; i++){ //i=1 Porque é preciso comparar o segundo elemento do vetor
-        temp=vetor[i];
-        j=i-1;
-        while (j>=0 && vetor[j]>temp){
-            vetor[j+1]=vetor[j]; //Se o numero que está sendo comparado for menor, então o numero atual ira assumir a posição acima do j
-            j=j-1;
+void insertion(int* vet, int vet_size) {
+    int i, j, key;
+    for (i = 1; i < vet_size; i++) {
+        key = vet[i];
+        j = i - 1;
+
+        while (j >= 0 && vet[j] > key) {
+            vet[j + 1] = vet[j];
+            j = j - 1;
         }
-        vetor[j+1]=temp;
+        vet[j + 1] = key;
     }
-    return vetor;
+}
+
+void insertion_step(int* vet, int vet_size, int step) {
+    if(step < 1 || step >= vet_size)
+        return;
+        
+    int key = vet[step];
+    int j = step - 1;
+
+    while (j >= 0 && vet[j] > key) {
+        vet[j + 1] = vet[j];
+        j = j - 1;
+    }
+    vet[j + 1] = key;
 }
 
 int *selection(int vetor[], int tamanho){

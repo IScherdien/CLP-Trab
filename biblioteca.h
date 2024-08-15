@@ -7,7 +7,8 @@
 int menu();
 void imprimir(int *vetor, int tamanho);
 int *gerar(int tamanho);
-int *insertion(int vetor[], int tamanho);
+void insertion(int* vet, int vet_size);
+void insertion_step(int* vet, int vet_size, int step);
 int *selection(int vetor[], int tamanho);
 int *quick(int vetor[],int esq, int dir);
 int *merge(int vetor[], int inicio, int fim);
